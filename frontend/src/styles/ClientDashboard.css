@@ -1,0 +1,364 @@
+/* Main Layout */
+.client-dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f7fa;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header Styles */
+.dashboard-header {
+  background: linear-gradient(135deg, #3a6186, #89253e);
+  color: white;
+  padding: 1.5rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.wallet-info {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+.wallet-card {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+}
+
+.wallet-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.wallet-card p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  word-break: break-all;
+}
+
+/* Main Content */
+.dashboard-content {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  width: 100%;
+}
+
+/* Section Styles */
+.dashboard-section {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.section-header {
+  background-color: #3a6186;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.section-content {
+  padding: 1.5rem;
+}
+
+/* Deposit Section */
+.deposit-section {
+  background-color: white;
+}
+
+.deposit-form {
+  max-width: 500px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.deposit-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.deposit-button:hover {
+  background-color: #3e8e41;
+}
+
+/* Meals Section */
+.meals-section .section-header {
+  background-color: #89253e;
+}
+
+.meals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.meal-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.meal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.meal-header {
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meal-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.meal-details {
+  padding: 1rem;
+}
+
+.meal-details p {
+  margin: 0.5rem 0;
+}
+
+.price {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.meal-id {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.request-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #3a6186;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.request-button:hover {
+  background-color: #2a4a6a;
+}
+
+.request-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.status-available {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.status-unavailable {
+  background-color: #f44336;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+/* Requests Section */
+.requests-section .section-header {
+  background-color: #3a6186;
+}
+
+.requests-table-container {
+  overflow-x: auto;
+}
+
+.requests-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.requests-table th {
+  background-color: #f8f9fa;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid #e0e0e0;
+  font-weight: 600;
+  color: #555;
+}
+
+.requests-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.approved-row {
+  background-color: rgba(76, 175, 80, 0.05);
+}
+
+.denied-row {
+  background-color: rgba(244, 67, 54, 0.05);
+}
+
+.pending-row {
+  background-color: rgba(255, 193, 7, 0.05);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-approved {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.status-denied {
+  background-color: #f44336;
+  color: white;
+}
+
+.status-pending {
+  background-color: #FFC107;
+  color: #333;
+}
+
+.no-data-message {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Footer Styles */
+.dashboard-footer {
+  background-color: #2c3e50;
+  color: white;
+  padding: 2rem 0 1rem;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 1.5rem;
+}
+
+.footer-section h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #ecf0f1;
+}
+
+.footer-section p {
+  margin: 0.5rem 0;
+  color: #bdc3c7;
+  font-size: 0.9rem;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #95a5a6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .meals-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+  }
+  
+  .footer-section {
+    margin-bottom: 1.5rem;
+  }
+}

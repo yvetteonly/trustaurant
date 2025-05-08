@@ -1,0 +1,486 @@
+/* Admin Dashboard Layout */
+.admin-dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header Styles */
+.dashboard-header {
+  background: linear-gradient(135deg, #3a6186, #89253e);
+  color: white;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.wallet-info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.wallet-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.wallet-detail span:first-child {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.account-address {
+  font-size: 0.95rem;
+  font-family: monospace;
+  word-break: break-all;
+}
+
+.balance-info {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Main Content */
+.dashboard-content {
+  flex: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+/* Section Styles */
+.section {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.section:hover {
+  transform: translateY(-2px);
+}
+
+.section-header {
+  background-color: #3a6186;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.section-content {
+  padding: 1.5rem;
+}
+
+/* Add Meal Section */
+.add-meal-section .section-header {
+  background-color: #2c3e50;
+}
+
+.add-meal-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.add-meal-form input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.add-meal-form button {
+  padding: 12px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.add-meal-form button:hover {
+  background-color: #1976D2;
+}
+
+.add-meal-form button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Meals Section */
+.meals-section .section-header {
+  background-color: #89253e;
+}
+
+.meals-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.meal-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #fff;
+}
+
+.meal-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.meal-header {
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meal-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.meal-details {
+  padding: 1rem;
+}
+
+.meal-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0.5rem 0;
+}
+
+.meal-id {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.meal-actions {
+  display: flex;
+  gap: 10px;
+  padding: 0 1rem 1rem;
+}
+
+.meal-actions button {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.toggle-button {
+  background-color: #3a6186;
+  color: white;
+}
+
+.toggle-button:hover {
+  background-color: #2a4a6a;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+.delete-button:disabled {
+  background-color: #e9a8ad;
+  cursor: not-allowed;
+}
+
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-badge.available {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.status-badge.unavailable {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Requests Section */
+.requests-section .section-header {
+  background-color: #3a6186;
+}
+
+.requests-table {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th {
+  background-color: #f8f9fa;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid #e0e0e0;
+  font-weight: 600;
+  color: #555;
+}
+
+td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.row-approved {
+  background-color: rgba(76, 175, 80, 0.05);
+}
+
+.row-denied {
+  background-color: rgba(244, 67, 54, 0.05);
+}
+
+.row-pending {
+  background-color: rgba(255, 193, 7, 0.05);
+}
+
+.client-address {
+  font-family: monospace;
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+.status {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status.approved {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.status.denied {
+  background-color: #f44336;
+  color: white;
+}
+
+.status.pending {
+  background-color: #FFC107;
+  color: #333;
+}
+
+.request-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.request-actions button {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.request-actions button:first-child {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.request-actions button:first-child:hover {
+  background-color: #3d8b40;
+}
+
+.request-actions button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.request-actions button:last-child:hover {
+  background-color: #d32f2f;
+}
+
+.processed-label {
+  color: #666;
+  font-style: italic;
+}
+
+/* Withdraw Section */
+.withdraw-section .section-header {
+  background-color: #2c3e50;
+}
+
+.balance-display {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.balance-amount {
+  font-weight: 600;
+  color: #3a6186;
+  font-size: 1.2rem;
+}
+
+.withdraw-form {
+  display: flex;
+  gap: 15px;
+}
+
+.withdraw-form input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.withdraw-form button {
+  padding: 12px 24px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.withdraw-form button:hover {
+  background-color: #218838;
+}
+
+.withdraw-form button:disabled {
+  background-color: #8fd19e;
+  cursor: not-allowed;
+}
+
+/* No Data Message */
+.no-data-message {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Footer Styles */
+.dashboard-footer {
+  background-color: #2c3e50;
+  color: white;
+  padding: 2rem 0 1rem;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 1.5rem;
+}
+
+.footer-section h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #ecf0f1;
+}
+
+.footer-section p {
+  margin: 0.5rem 0;
+  color: #bdc3c7;
+  font-size: 0.9rem;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #95a5a6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 1rem;
+  }
+  
+  .meals-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .wallet-info {
+    flex-direction: column;
+  }
+  
+  .withdraw-form {
+    flex-direction: column;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+  }
+}
