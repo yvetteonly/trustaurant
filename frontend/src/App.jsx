@@ -6,7 +6,7 @@ import './App.css'
 function App() {
   const [account, setAccount] = useState('')
   const navigate = useNavigate()
-  const contractAddress = '0x3Aa5ebB10DC797CAC828524e59A333d0A371443c'
+  const contractAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3'
   const contractOwner = '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
 
   const connectWallet = async () => {

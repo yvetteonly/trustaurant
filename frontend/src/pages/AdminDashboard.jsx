@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
 import { abi } from "../contracts/Trustaurant.json";
 import "../styles/AdminDashboard.css";
+import { useNavigate } from 'react-router-dom';
 
 function AdminDashboard() {
   const [meals, setMeals] = useState([]);
@@ -11,8 +12,9 @@ function AdminDashboard() {
   const [loading, setLoading] = useState(false);
   const [withdrawAmount, setWithdrawAmount] = useState('');
   const [account, setAccount] = useState('');
+  const navigate = useNavigate();
 
-  const contractAddress = '0x3Aa5ebB10DC797CAC828524e59A333d0A371443c';
+  const contractAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
 
   const getContract = async () => {
     const provider = new ethers.BrowserProvider(window.ethereum);
@@ -48,6 +50,10 @@ function AdminDashboard() {
           const provider = new ethers.BrowserProvider(window.ethereum);
           const signer = await provider.getSigner();
           const contract = new ethers.Contract(contractAddress, abi, signer);
+
+          // Get connected account
+          const address = await signer.getAddress();
+          setAccount(address);
 
           // Load initial data
           const mealsData = await contract.viewMeals();
@@ -95,6 +101,7 @@ function AdminDashboard() {
   };
 
   // Add withdraw function (remove the duplicate state declaration)
+  // Add withdraw function
   const withdrawEth = async (e) => {
     e.preventDefault();
     try {
@@ -144,11 +151,11 @@ function AdminDashboard() {
         return;
       }
 
-      // Perform withdrawal with higher gas limit
+      // Perform withdrawal without specifying gas limit
       console.log("Attempting withdrawal...");
-      const tx = await contract.withdrawTo(amountInWei, address, {
-        gasLimit: 500000 // Increased gas limit
-      });
+      
+      // Call the withdrawTo function with just the required parameters
+      const tx = await contract.withdrawTo(amountInWei, address);
       
       console.log("Transaction sent:", tx.hash);
       
@@ -244,6 +251,9 @@ function AdminDashboard() {
             <span>System Balance:</span>
             <span className="balance-info">{systemBalance} ETH</span>
           </div>
+          <button className="back-home-button" onClick={() => navigate('/')}>
+            Back to Home
+          </button>
         </div>
       </header>
 

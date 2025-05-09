@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
 import { abi } from "../contracts/Trustaurant.json";
 import "../styles/ClientDashboard.css";
+import { useNavigate } from 'react-router-dom';
 
 function ClientDashboard() {
   const [meals, setMeals] = useState([]);
@@ -10,8 +11,9 @@ function ClientDashboard() {
   const [walletBalance, setWalletBalance] = useState('0');
   const [account, setAccount] = useState('');
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const contractAddress = '0x3Aa5ebB10DC797CAC828524e59A333d0A371443c';
+  const contractAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
 
   const getContract = async () => {
     const provider = new ethers.BrowserProvider(window.ethereum);
@@ -138,6 +140,9 @@ function ClientDashboard() {
               <p><strong>Wallet Address:</strong> {account}</p>
               <p><strong>Wallet Balance:</strong> {walletBalance} ETH</p>
               <p><strong>Trustaurant Balance:</strong> {balance} ETH</p>
+              <button className="back-home-button" onClick={() => navigate('/')}>
+                Back to Home
+              </button>
             </div>
           </div>
         </div>
